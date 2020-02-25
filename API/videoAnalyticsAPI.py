@@ -22,15 +22,15 @@ else:
 analyze_url = endpoint + "vision/v2.1/analyze"
 
 # Select video
-vidcap = cv2.VideoCapture('./asset/testVideo.MOV')
+vidcap = cv2.VideoCapture('./asset/testVideo5.MOV')
 
 # analyzeFrame(sec) analysis the frame at the given sec from the selected video.
 # Analyzed factors: Faces(age & gender).
 def analyzeFrame(sec):
     vidcap.set(cv2.CAP_PROP_POS_MSEC,sec*1000)
-    hasFrames,image = vidcap.read() # Get the frame.
+    hasFrames,image = vidcap.read()   # Get the frame.
     if hasFrames:   # If frame exists.
-        image_path = "./asset/tempImage.jpg"  # Set the local path of frame to analyze.
+        image_path = "./asset/tempImage" + str(count) + ".jpg"  # Set the local path of frame to analyze.
         cv2.imwrite(image_path, image)     # Save frame as JPG file.
         print("Detecting faces on image #{}".format(count))
 
@@ -53,9 +53,9 @@ def analyzeFrame(sec):
             for face in analysis["faces"]:
                 # Print the results with gender, age
                 results.append({"age":face["age"],"gender":face["gender"]})
-                print("New face of age {} and sexe {}".format(face["age"], face["gender"]))
+                print("New face of age {} and gender {}".format(face["age"], face["gender"]))
         print()
-        os.remove(image_path)   # delete frame
+        #os.remove(image_path)   # delete frame
         
     return hasFrames
 
@@ -69,6 +69,7 @@ while success:  # Keep analyzing frames until the end of the video has been reac
     sec += frameRate
     success = analyzeFrame(sec)
 
+# Print analysis
 print("Here is what we have detected overall:")
 for result in results:
     print("{} of {} years old".format(result["gender"], result["age"])) 
