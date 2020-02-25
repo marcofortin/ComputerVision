@@ -55,7 +55,7 @@ def analyzeFrame(sec):
                 results.append({"age":face["age"],"gender":face["gender"]})
                 print("New face of age {} and gender {}".format(face["age"], face["gender"]))
         print()
-        #os.remove(image_path)   # delete frame
+        os.remove(image_path)   # delete frame
         
     return hasFrames
 
