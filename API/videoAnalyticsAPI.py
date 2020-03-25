@@ -36,13 +36,10 @@ def analyzeFrame(sec):
         cv2.imwrite(image_path, image)     # Save frame as JPG file.
         print("Detecting faces on image #{}".format(count))
 
-        # Select the visual feature(s) wanted : Faces(age & gender).
-        remote_image_features = ["faces"]
-
         # Call the API.
         image_data = open(image_path, "rb").read()  # Read the image into a byte array
         headers = {'Ocp-Apim-Subscription-Key': subscription_key, 'Content-Type': 'application/octet-stream'}
-        params = {'visualFeatures': 'Faces'}
+        params = {'visualFeatures': 'Faces'}  # Select the visual feature(s) wanted : Faces(age & gender).
         response = requests.post(analyze_url, headers=headers, params=params, data=image_data)
         response.raise_for_status()
 
