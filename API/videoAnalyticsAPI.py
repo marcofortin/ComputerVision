@@ -2,10 +2,12 @@
 import cv2
 import os
 import requests
+import sys
 import matplotlib.pyplot as plt
 from PIL import Image
 from io import BytesIO
 
+# Computer Vision subscription available on the Azure portal
 # Add your Computer Vision subscription key to your environment variables.
 if 'COMPUTER_VISION_SUBSCRIPTION_KEY' in os.environ:
     subscription_key = os.environ['COMPUTER_VISION_SUBSCRIPTION_KEY']
