@@ -1,3 +1,5 @@
+# Using ms's computer vision API to analyse local image (stored in assed folder)
+
 # Imports
 import os
 import requests

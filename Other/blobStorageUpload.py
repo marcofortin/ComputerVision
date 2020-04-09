@@ -1,3 +1,5 @@
+# Uploading local images (stored in asset folder) to ms azure blob
+
 import os, uuid
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 

@@ -1,3 +1,5 @@
+# Convert local video into frames/images
+
 # Imports
 import cv2
 

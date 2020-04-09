@@ -1,3 +1,5 @@
+# Using ms's computer vision SDK to analyse online videos with url
+
 # Imports
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import TextOperationStatusCodes

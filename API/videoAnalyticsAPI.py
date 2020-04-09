@@ -1,3 +1,5 @@
+# Using ms's computer vision API to analyse local videos (stored in assed folder)
+
 # Imports
 import cv2
 import os
